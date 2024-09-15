@@ -25,6 +25,7 @@ def getintouch(request):
         getintouchs.save()
         sendMailToHost(firstname,lastname,email,phone,company,address,message) 
         sendMailToCustomer(firstname,lastname,email)
+        return render(request, 'thankyou.html')
     return render(request, 'getintouch.html')
 
 def sendMailToHost(firstname,lastname,email,phone,comapny,address,message):
