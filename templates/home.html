@@ -1,0 +1,504 @@
+{% extends 'header.html' %}
+
+
+{% block title %}Home{% endblock title %}
+
+{% block body%}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko:700">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+<style>
+    
+  @keyframes ascend {
+      0% { 
+          opacity: 0; 
+          transform: translateY(100%);
+      }
+      100% { 
+          opacity: 1; 
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes descend {
+      0% { 
+          opacity: 0; 
+          transform: translateY(-100%);
+      }
+      100% { 
+          opacity: 1; 
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes fadeIn {
+      0% { 
+          opacity: 0;
+      }
+      100% { 
+          opacity: 3;
+      }
+  }
+
+  @keyframes slideInFromLeft {
+      0% { 
+          opacity: 0; 
+          transform: translateX(-100%);
+      }
+      100% { 
+          opacity: 1; 
+          transform: translateX(0);
+      }
+  }
+  @keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+  }
+  .rightAnimation {
+    opacity: 0; 
+    animation: slideInFromRight 0.5s ease-out forwards;
+  }
+  .animated-text {
+      
+      color: #333;
+      display: block;
+  }
+.descend {
+      animation: descend 1s ease-out;
+  }
+.fadeIn {
+            margin-top: 20px;
+            animation: fadeIn 3s ease-out;
+}
+.slideInFromLeft {
+      
+      color: #333;
+      margin-top: 20px;
+      animation: slideInFromLeft 2s ease-out;
+  }
+.hoverEffect {
+            
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+.hoverEffect:hover {
+            transform: scale(1.1);
+            opacity: 100;
+        }
+  .video{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+    /* Mobile devices (max-width: 768px) */
+    @media only screen and (max-width: 768px) {
+        /* Adjust font sizes, padding, and margins for mobile devices */
+        .display-1 {
+            font-size: 40px;
+        }
+        .display-5 {
+            font-size: 19px;
+        }
+        .display-2{
+          font-size: 20px;
+        }
+        .display-3{
+          font-size: 20px;
+        }
+        .fs-lg {
+            font-size: 18px;
+        }
+        .py-xxl-2 {
+            padding-top: 18px;
+        }
+        .mx-auto {
+            margin: 0 auto;
+        }
+        .card-hover {
+            max-width: 300px;
+        }
+        .card-body {
+            padding: 20px;
+        }
+    }
+
+    /* Tablets and small desktops (min-width: 769px and max-width: 1024px) */
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        /* Adjust font sizes, padding, and margins for tablets and small desktops */
+        .display-1 {
+            font-size: 80px;
+        }
+        .display-2 {
+      font-size: 50px;
+    }
+    .display-3 {
+      font-size: 60px;
+    }
+    .display-5 {
+            font-size: 30px;
+        }
+        .fs-lg {
+            font-size: 22px;
+        }
+        .py-xxl-2 {
+            padding-top: 30px;
+        }
+        .mx-auto {
+            margin: 0 auto;
+        }
+        .card-hover {
+            max-width: 400px;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .card-container {
+    
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .img-fluid {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+       
+    }
+
+    /* Large desktops (min-width: 1025px) */
+    @media only screen and (min-width: 1025px) {
+        /* Adjust font sizes, padding, and margins for large desktops */
+        .video-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+        .display-1 {
+            font-size: 120px;
+            margin-top: 4rem;
+        }
+        .display-2{
+          font-size: 70px;
+        }
+        .display-3{
+          font-size: 70px;
+        }
+        .display-5 {
+            font-size: 36px;
+        }
+        .fs-lg {
+            font-size: 26px;
+        }
+        .py-xxl-2 {
+            padding-top: 40px;
+        }
+        .mx-auto {
+            margin: 0 auto;
+        }
+        .card-hover {
+            max-width: 500px;
+        }
+        .card-body {
+            padding: 40px;
+        }
+        hr{
+          width: 30rem; 
+          margin-left: 20rem;
+        }
+    }
+   
+    .snip *,
+.snip *:before,
+.snip *:after {
+  box-sizing: border-box;
+  transition: all 0.45s ease;
+}
+
+.snip {
+  font-family: "Source Sans Pro", sans-serif;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  min-width: 230px;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px;
+  text-align: left;
+  transform: translateZ(0);
+}
+
+.snip:hover .snip__title,
+.snip:hover .snip__text {
+  transform: translateY(0);
+  opacity: 0.9;
+  transition-delay: 0.2s;
+}
+
+.snip::before,
+.snip::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #b81212;
+  opacity: 0.5;
+  transition: all 0.45s ease;
+}
+
+.snip::before {
+  transform: skew(30deg) translateX(-80%);
+}
+
+.snip::after {
+  transform: skew(-30deg) translateX(-70%);
+}
+
+.snip:hover::before {
+  transform: skew(30deg) translateX(-20%);
+  transition-delay: 0.05s;
+}
+
+.snip:hover::after {
+  transform: skew(-30deg) translateX(-10%);
+}
+
+.snip:hover .snip__figcaption::before {
+  transform: skew(30deg) translateX(-40%);
+  transition-delay: 0.15s;
+}
+
+.snip:hover .snip__figcaption::after {
+  transform: skew(-30deg) translateX(-30%);
+  transition-delay: 0.1s;
+}
+
+.snip__image {
+  backface-visibility: hidden;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.snip__figcaption {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 1;
+  bottom: 0;
+  padding: 25px 40% 25px 20px;
+}
+
+.snip__figcaption::before,
+.snip__figcaption::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #b81212;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  content: "";
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.snip__figcaption::before {
+  transform: skew(30deg) translateX(-100%);
+}
+
+.snip__figcaption::after {
+  transform: skew(-30deg) translateX(-90%);
+}
+
+.snip__title,
+.snip__text {
+  margin: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+}
+
+.snip__title {
+  font-family: "Teko", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+.snip__text {
+  font-size: 1em;
+}
+
+.snip__link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+@media only screen and (max-width: 361px) {
+  .snip__title {
+    font-size: 18px; /* adjust font size for smaller screens */
+  }
+  .snip__text {
+    font-size: 0.3em; /* adjust font size for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .snip__title {
+    font-size: 24px; /* adjust font size for smaller screens */
+  }
+  .snip__text {
+    font-size: 0.8em; /* adjust font size for smaller screens */
+  }
+}
+
+
+</style>
+
+<nav class="shadow p-3 mb-5 py-1 bg-white rounded">
+  <!--Slide section start--> 
+  
+  <div class="card border-0">
+    <video class="img-fluid" src="/static/bg-video.mp4" autoplay muted loop ></video>
+    <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, 0.6);">
+      <h1 class="display-1 animated-text slideInFromLeft" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;color: aliceblue;">Welcome,</h1>
+        <h2 class="display-2  descend" style="font-family:'Courier New', Courier, monospace; color: aliceblue;">Acquirers & Distributors!</h2>
+        <p class="display-3 fadeIn" style="font-family: 'Bebas Neue';color: #c51b1b;">Let’s Seal the Deal</p>
+    </div>
+  </div>
+
+
+
+
+  <!--Slide section end-->
+
+  
+  <section class="container">   
+    <div class="text-center" style="margin-top: 4rem;">
+      <h2 class="display-5 pt-xxl-2" style="color: #15544a">Products</h2>
+      <p class="fs-lg pb-3 pb-lg-0 mb-lg-2" style="color: #15544a;font-weight: 500;">All Brass, All Class - Delivering Top-Quality Parts</p>
+      <hr >
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 ">
+        <div class="col mb-3">
+          <figure class="snip">
+            <img class="snip__image" src="/static/Productimage/surgicalandelectriparts.jpg" style="rotate: -90deg;" alt="">
+            <figcaption class="snip__figcaption">
+              <h3 class="snip__title">Electric and Bicycle Pump Parts</h3>
+              <p class="snip__text">
+                we specialize in high-quality electrical components and bicycle pump parts. Our products are crafted for durability, efficiency, and optimal performance, making us a trusted partner in both industries.
+              </p>
+              <p class="snip__text">
+                <a class="snip__link" href="/product" style="color: aliceblue;font-size: medium;">Explore our Collection</a>    
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="col mb-3">
+          <figure class="snip">
+            <img class="snip__image" src="/static/Productimage/Hex nut-bolts/hex-nut-bolt.jpg" style="rotate: 90deg;" alt="">
+            <figcaption class="snip__figcaption">
+              <h3 class="snip__title">Hex nuts and bolts</h3>
+              <p class="snip__text">
+                We manufacture precision-engineered hex nuts and bolts.Our products are designed for strength and durability, making them ideal for a wide range of industrial applications. Trust our expertise for secure and efficient fastening solutions.
+              </p>
+              <p class="snip__text">
+                <a class="snip__link" href="/product" style="color: aliceblue;font-size: medium;">Explore our Collection</a>    
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  <!--Why section start-->
+  <div class="card mb-3 mx-4 border-0">
+    <div class="card-body">
+      <h1 class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #ee3435;">Why Swastik Metal?</h1>
+      <h4 class="card-text" style="color: #15544a;">Expertise, Quality, Innovation, and Customer Focus - Your Trusted Brass Partner.</h4>
+      <p class="card-text" style="color: #15544a;text-align: justify;">At Swastik, our dedication to excellence is unmatched. With over two decades of industry experience, we have honed our expertise to deliver the best in brass manufacturing. We adhere to rigorous quality control standards, ensuring every product meets the highest levels of performance and durability. Innovation is at our core, as we continuously embrace the latest technology and manufacturing techniques to stay ahead of the curve. Our customer-centric approach means we are always focused on exceeding your expectations, providing personalized service and solutions tailored to your needs.</p>
+    </div>
+  </div>
+  <div class="" style="color: #15544a;">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card border-0 shadow-sm p-3 mb-5 py-1 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><span class="p-2"><img src="/static/business.gif" ></span>Top Industry Experts</h5>
+            <p class="card-text" style="text-align: justify;">With over two decades of industry knowledge, our team consists of seasoned professionals who bring a wealth of experience and expertise to every project. We understand the nuances of the brass manufacturing industry, ensuring that we deliver exceptional results every time. Our deep understanding of materials, processes, and market trends allows us to offer innovative solutions that meet the specific needs of our clients.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card border-0 shadow-sm p-3 mb-5 py-1 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><span class="p-2"><img src="/static/good-quality.gif" ></span>Product Assurance</h5>
+            <p class="card-text" style="text-align: justify;">We place a strong emphasis on delivering products of the highest quality. Our rigorous quality assurance processes ensure that every product meets stringent industry standards. Through meticulous testing and inspections at every stage of production, we guarantee reliability and performance. Our commitment to quality assurance means you can trust that our products are durable, precise, and built to last.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-6">
+        <div class="card border-0  shadow-sm p-3 mb-5 py-1 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><span class="p-2"><img src="/static/settings.gif" ></span>Fast-Track Manufacturing</h5>
+            <p class="card-text" style="text-align: justify;">Our ability to meet stringent deadlines while maintaining exceptional quality ensures that we are a dependable partner for all your brass manufacturing requirements. This proficiency underscores our commitment to delivering timely and superior products, setting us apart in the industry.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 ">
+        <div class="card border-0  shadow-sm p-3 mb-5 py-1 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><span class="p-2"><img src="/static/delivery.gif" ></span>Punctual Shipping</h5>
+            <p class="card-text" style="text-align: justify;">We understand the critical importance of deadlines. Our streamlined processes and efficient production capabilities ensure that your orders are delivered on schedule, every time. We prioritize punctuality and reliability, so you can count on us to keep your projects moving forward without delays.</p>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-6">
+        <div class="card border-0  shadow-sm p-3 mb-5 py-1 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title"><span class="p-2"><img src="/static/workflow.gif" style="color: #15544a;"></span>Boost Operational Efficiency</h5>
+            <p class="card-text" style="text-align: justify;">Emphasizes our commitment to refining operational workflows to maximize efficiency and output. We continuously refine and streamline our manufacturing processes to ensure timely and high-quality delivery of products</p>
+          </div>
+        </div> 
+      </div> 
+    </div>
+  </div>
+  <!--Why section send-->
+
+  <a href="tel:+91 7859951092" class="btn mb-3 mx-5 justify-content-center nav hoverEffect" style="background-color: #ee3435; color: aliceblue;">Give us a call</a>  
+
+</nav>
+
+{% endblock body %}

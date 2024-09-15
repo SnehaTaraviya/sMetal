@@ -1,0 +1,133 @@
+{% extends 'header.html' %}
+
+{% block title %}Products{% endblock title %}
+
+{% block body%}
+
+<style>
+  .con {
+  position: relative;
+  height: 250px;
+  width: 250px;
+  margin: 2%;
+}
+
+.imm {
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+.ove {
+  position: absolute; 
+  bottom: 0; 
+  background: rgba( 21, 84, 74, 0.60);
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .1s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.con:hover .ove {
+  opacity: 2;
+}
+</style>
+
+
+    <!--Main body section start-->
+
+    <nav class="shadow p-3 mb-5 bg-white rounded">
+
+        <!--header section start-->
+
+        <section class="container mb-2" id="mission" style="scroll-margin-top: 60px">
+            <div class="text-center mx-auto" style="max-width: 690px; color: #15544a">
+              <p class="display-6 mt-2 mb-2"  style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our Collection</p>
+              <p class="lead" style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Unmatched Durability in Brass Manufacturing</p>
+              <hr class="mt-0 mb-3" width="100%">
+            </div>
+        </section>
+
+        <!--header section end-->
+
+        <!--product showcase start-->
+        <section class="container" style="margin-bottom: 3rem;">
+            <div class="row">
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/surgicalpartproducts" style="color: aliceblue;"><img src="/static/Productimage/Surgical Part/medical instruments part.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/surgicalpartproducts" style="color: aliceblue;">Medical Instrument Parts</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/hextnutsbolts" style="color: aliceblue;"><img src="/static/Productimage/Hex nut-bolts/hex-nut-bolt.jpg" style="rotate: 90deg;" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/hextnutsbolts" style="color: aliceblue;">Hex Nut-Bolts</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/electricpartproducts" style="color: aliceblue;"><img src="/static/Productimage/Electric parts/electric component parts.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/electricpartproducts" style="color: aliceblue;">Electric Parts</a></div>
+                </div>
+              </div>
+              
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/bicyclepumpparts" style="color: aliceblue;"><img src="/static/Productimage/bicycle pump parts/bicycle pump part.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/bicyclepumpparts" style="color: aliceblue;">Bicycle Pump Parts</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/brasswingnutproducts" style="color: aliceblue;"><img src="/static/Productimage/Brass wing nuts/wing nuts.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/brasswingnutproducts" style="color: aliceblue;">Brass Wing Nuts</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/brasssensitrololivalveproducts" style="color: aliceblue;"><img src="/static/Productimage/Brass Sensitrol Oil Valve/sensitive-oil-valve.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/brasssensitrololivalveproducts" style="color: aliceblue;">Brass Sensitrol Oil Valve and Staters</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/santrairyitems" style="color: aliceblue;"><img src="/static/Productimage/Santrairy items/water meter connector.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/santrairyitems" style="color: aliceblue;">Santrairy Items</a></div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="con">
+                  <a class=" text-decoration-none" href="/brassinsertproducts" style="color: aliceblue;"><img src="/static/Productimage/Brass Insert/kurling insert.jpg" class="imm" alt="..."></a>
+                <div class="ove"><a class=" text-decoration-none" href="/brassinsertproducts" style="color: aliceblue;">Brass Insert</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="con">
+                <a class=" text-decoration-none" href="/brassterminals" style="color: aliceblue;"><img src="/static/Productimage/Brass terminal/battery terminal.jpg" class="imm" alt="..."></a>
+              <div class="ove"><a class=" text-decoration-none" href="/brassterminals" style="color: aliceblue;">Brass terminal</a></div>
+              </div>
+            </div>
+      </section>
+
+        <!--product showcase end-->
+        <div class="card mb-3 mx-5  border-0" style="text-align: center;">
+          <div class="card-body">
+            <h3 class="card-title" style="font-family: Georgia, 'Times New Roman', Times, serif; color: #ee3435;">Superior Brass Products & Custom Solutions</h3>
+            <h5 class="card-text" style="color: #15544a;">Trusted Quality and Innovation for All Your Brass Needs</h5>
+            <hr class="mt-0 mb-3" width="100%">
+            <p class="card-text" style="color: #15544a;">By choosing Swastik Metal for your brass product needs, you are opting for superior quality and reliability. Our dedication to excellence and innovation ensures that our products meet the highest industry standards, making us a trusted partner across various sectors worldwide.</p>
+            <p class="card-text h6" style="color:#ee3435;">If your desired products are not in our collection, feel free to share your product images and drawings, and we will manufacture them to your specifications.</p>
+          </div>
+        </div>
+        
+    </nav>
+    
+    <!--Main body section start-->
+
+{% endblock body %}

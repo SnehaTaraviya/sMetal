@@ -1,0 +1,49 @@
+{% extends 'header.html' %}
+
+
+{% block title %}Thank you{% endblock title %}
+
+{% block body%}
+<style>
+     @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .leftAnimation {
+            opacity: 0; 
+            animation: slideInFromLeft 1s ease-out forwards; 
+        }
+
+        
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .rightAnimation {
+            opacity: 0; 
+            animation: slideInFromRight 1s ease-out forwards;
+        }
+</style>
+
+
+<nav class="shadow p-3 pb-5 mb-5 py-1 bg-white rounded text-center">
+<p class="display-6 pt-5 rightAnimation" style="color: #ee3435;">Thank you for reaching out.</p>
+<p class="pb-5 mb-5 leftAnimation" style="font-size: larger; color: #15544a;">Our team will get in touch with you as soon as possible.</p>
+</nav>
+
+
+{% endblock body%}

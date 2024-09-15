@@ -1,0 +1,260 @@
+{% extends 'header.html' %}
+
+
+{% block title %}Get in Touch{% endblock title %}
+
+{% block body%}
+  <style>
+
+      
+        
+       @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .leftAnimation {
+            opacity: 0; 
+            animation: slideInFromLeft 1s ease-out forwards; 
+        }
+
+        
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .rightAnimation {
+            opacity: 0; 
+            animation: slideInFromRight 1s ease-out forwards;
+        }
+        .rightGIFAnimation {
+            opacity: 0; 
+            animation: slideInFromRight 1s ease-out forwards;
+        }        
+        .hoverEffect {
+            
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .hoverEffect:hover {
+            transform: scale(1.1);
+            opacity: 100;
+        }
+
+        .card1body{
+          display: flex;
+          align-items: center;
+          position: relative;
+          height: 250px;
+          width: 250px;          
+      }
+      
+      .card1{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          border-radius: 0 0 15px 15px;
+          box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;
+          width: 250px;
+          padding-bottom: 15px;
+          background-color: white;
+      }
+      
+      .card1 img{
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          padding: 5px;
+          margin-top: -45px;
+      }
+      
+      .card1 h2{
+          margin: 10px 0;
+          color: #c51b1b;
+          font-size: large;
+      }
+      
+      .cont{
+          width: 90%;
+          height: 0;
+          overflow: hidden;
+          text-align: center;
+          transition: all 0.6s ease;
+          
+      }
+      
+      
+      
+      .card1:hover > .cont{         
+          align-items: center;
+          justify-content: space-between;
+          text-align: center;
+          height: 100px;
+          width: 170px;
+          
+      }
+    
+
+  </style>
+
+    <!--body section start-->
+    <nav  style="background-color: white; box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;">
+        <!--get in touch header strat-->
+        <section class="container mb-5" id="mission" style="scroll-margin-top: 60px">
+            <div class="text-center mx-auto" style="max-width: 690px; color: #15544a">
+              <p class="mt-2 mb-2 display-6"  style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Get <i>in</i> Touch</p>
+              <p class="lead" style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Hit us up and let's make things happen!</p>
+              <hr class="mt-0 mb-3" width="100%">
+            </div>
+        </section>
+        <!--get in touch header end-->
+
+        <!--get in touch from and contact strat-->
+        <section class="container px-3 ">
+        
+          <div class="row text-center">
+            <div class="col mb-3">
+              <div class="card1body">
+                <div class="card1">
+                        <img src="/static/call-us.png" alt="">
+                        <h2>Call us</h2>
+                        <div class="cont">
+                            <a href="tel:+91 8160361521" style="text-decoration: none;color: #15544a;">Shialesh Taraviya,CEO</a>
+                            <a href="tel:+91 7859951092" style="margin-bottom: 10rem;text-decoration: none;color: #15544a;">Yash Taraviya,COO</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col mb-3">
+              <div class="card1body">
+                <div class="card1">
+                        <img src="/static/email.png" alt="">
+                        <h2>Email</h2>
+                        <div class="cont">
+                            <a href="mailto:	businesswith@swastik-metal.com" style="text-decoration: none;color: #15544a;">businesswith@swastik-metal.com</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col mb-3">
+              <div class="card1body">
+                <div class="card1">
+                        <img src="/static/location.png" alt="">
+                        <h2>Location</h2>
+                        <div class="cont">
+                            <a href="https://maps.app.goo.gl/4155ohXF1kMb8QjVA" style="text-decoration: none;color: #15544a;">361004 Jamnagar, Gujarat, India</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col mb-3">
+              <div class="card1body">
+                <div class="card1">
+                        <img src="/static/instagram.png" alt="">
+                        <h2>Follow us</h2>
+                        <div class="cont">
+                            <a href="https://www.instagram.com/swastik__metal/" style="text-decoration: none;color: #15544a;">Instagram</a>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            
+          </div>
+        </section>
+
+        <section class="container py-4" style="background-color: aliceblue;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;">
+            
+              <!--contact form-->
+              <div class="row">
+                
+                  <div class="col  rounded" style="background: transparent;">
+                    
+                        <form method="post" action="/getintouch"  >
+                        {% csrf_token %}
+                            <div class="form-row mt-2">
+                              <div class="col-md-12 mb-4">
+                                <input type="text" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="firstname" id="firstname" placeholder="Enter First Name" autocomplete="off" required>
+                              </div>
+                              <div class="col-md-12 mb-4">
+                                <input type="text" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="lastname" id="lastname" placeholder="Enter Last Name" required autocomplete="off">
+                              </div>
+                              <div class="col-md-12 mb-4">  
+                                <input type="email" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="email" id="email" placeholder="name@example.com">
+                              </div> 
+                            </div>
+                            <div class="col-md-12 mb-4">
+                              <input type="phone" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="phone" id="phone" placeholder="+91 0000000000" required autocomplete="off">
+                            </div>
+                            <div class="col-md-12 mb-4">
+                              <input type="text" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="company" id="company" placeholder="Company Name" required autocomplete="off">
+                            </div>
+                            <div class="col-md-12 mb-4">
+                              <input type="text" style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="address" id="address" placeholder="Company Address" required autocomplete="off">
+                            </div>
+                            <div class="col-md-12 mb-4">  
+                              <textarea style="border: none; color: #15544a;box-shadow: rgba( 21, 84, 74, 0.24) 0px 3px 8px;" class="form-control" name="message" id="message" rows="3" placeholder="Write Message Here...!" required autocomplete="off"></textarea>
+                            </div>
+                            {{ form.as_p }}
+                            <div class="text-center">
+                            <button class="btn hoverEffect" style="color: #e7f0fd ; background-color: #15544a;" type="submit">Send Inquiry</button>
+                          </div>
+                          </form>
+                  </div>
+                  
+                
+                
+                  <div class="col  rightGIFAnimation scrollEffect">
+                    <div >
+                      <img src="/static/Developer discussing different options.gif" height="400px" alt="">
+                    </div>  
+                </div>
+
+              </div>
+
+              
+              
+
+            
+          </section>
+
+        <!--get in touch from and contact end-->
+
+
+        
+        <!--Google map start-->
+        <div class="container px-1">
+          <div class="row gx-2">
+            <div class="col">
+             <div class="py-5 text-center">
+              <iframe class="rounded-3 w-100 h-100" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3260.926286091541!2d70.04861987463994!3d22.41575233870199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39576b000b282a65%3A0xbe4bec0cd4cfe612!2sSwastik%20Metal!5e1!3m2!1sen!2sin!4v1726377432383!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+             </div>
+            </div>
+          </div>
+        </div>
+          
+        
+         
+        
+        <!--Google map end-->
+    </nav>
+    <!--body section end-->
+   
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="scripts.js"></script>
+{% endblock body %}

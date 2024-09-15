@@ -1,0 +1,182 @@
+{% extends 'header.html' %}
+
+
+{% block title %}About Us{% endblock title %}
+
+{% block body%}
+  <style>
+    @keyframes slideInFromLeft {
+      0% {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(20%);
+                opacity: 0;
+            }
+  }
+
+  .leftAnimation {
+      opacity: 0; 
+      animation: slideInFromLeft 2s ease-out infinite; 
+  }
+  .logos-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: relative;
+    -webkit-mask-image: linear-gradient(90deg,rgba(0,0,0,0) 0,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(90deg,rgba(0,0,0,0) 0,#000 15%,#000 85%,rgba(0,0,0,0) 100%);
+}
+
+.logos-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    animation: slide 15s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0,0,0)
+  }
+  100% {
+    transform: translate3d(-100%,0,0)
+  }
+}
+
+.cardd {
+  padding: 2rem;
+  margin: 0 auto;
+}
+.slider-image{
+  width: 0%;
+  height: 10%;
+}
+
+
+
+
+
+  </style>
+
+  <!--body section start-->
+
+  <nav class="shadow p-3 mb-5 bg-white rounded">
+
+      <!--aboutus header strat-->
+      <section class="container mb-5" id="mission" style="scroll-margin-top: 60px">
+          <div class="text-center mx-auto" style="max-width: 690px; color: #15544a">
+            <p class="mt-2 mb-2 display-6"  style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Dive Into <i>our</i> World</p>  
+            <p class="lead" style="color: #15544a; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Brass Craftsmanship at Its Finest.</p>
+            <hr class="mt-0 mb-3" width="100%">
+          </div>
+      </section>
+      <!--aboutus header end-->
+
+
+    <!--Company info start-->
+    <section class="container">      
+        <div class="row">
+          <div class="col-lg-6 order-lg-2 order-2">
+            
+              <h2 class="card-title" style="color: #ee3435;">Nice to Meet YOU!</h2>
+              <h5 class="card-text" style="color: #15544a;">Swastik Metal have Expertise in Brass Manufacturing and Global Scrap Importing</h5>
+              <p class="card-text" style="color: #15544a; text-align: justify;">Since 1997, Swastik Metal has been a cornerstone in the manufacturing industry, delivering a wide range of high-quality brass products. Our extensive product line is utilized across various sectors, including the electric industry, automation industry, and medical industry, ensuring superior performance and reliability. With over four decades of experience, we have established a reputation for excellence and innovation, exporting our products worldwide.</p>
+              <p class="card-text" style="color: #15544a; text-align: justify;">In addition to manufacturing, Swastik Metal boasts over 10-12 years of expertise in brass scrap processing. We are a leading importer of Brass Scrap (Honey Brass), sourcing materials from around the globe to maintain our commitment to sustainability and quality. Our global network ensures we receive the finest scrap materials, which are then meticulously processed to create top-tier brass products.</p>
+              <p class="card-text" style="color: #15544a; text-align: justify;">At Swastik Metal, our dedication to quality, innovation, and customer satisfaction drives us to continually improve our processes and expand our reach. Join us in our journey as we continue to set the standard in the brass manufacturing industry. </p> 
+            
+          </div>
+          <div class="col-lg-6 order-lg-1 order-1">
+            <img src="/static/IMG_20240730_123030.jpg" class="img-fluid rounded-3 img-md" alt="...">
+          </div>
+        </div>
+    </section>
+    <!--Company info end-->
+    <!--manufaturing process section start-->
+    <!--manufactring header start-->
+    <section class="container pt-3 pt-sm-4 pt-lg-5 mt-lg-2 mt-xl-4 mt-xxl-5" style="scroll-margin-top: 60px">
+      <div class="text-center mx-auto display-6">
+        <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #15544a;">Manufacturing Procedures</h2>
+        <hr class="" width="100%">
+      </div>
+    </section>
+    <!--manufactring header end-->
+    
+    <div class="cardd border-0">
+      <div class="logos-slider">
+        <div class="logos-slider-container">
+          <img style="margin-left: 20rem" src="" alt="">
+          <div style="max-width: 145px;">
+            <img src="/static/rawmaterial.png" alt="...">
+            <p class="text-center mx-2 h6" style="color: #15544a;">Import Raw Materials</p>                       
+          </div>
+          <!--1st image-->
+          <div class="my-3 leftAnimation">
+            <img src="/static/arrow.png" alt="...">            
+          </div>
+          <!--2nd image-->
+          <div style="max-width: 145px;">
+            <img src="/static/manufacturing.png" alt="...">
+            <p class="text-center mx-2 h6" style="color: #15544a;">Manufacturing</p>                       
+          </div>
+          <!--3rd image-->
+           <div class="my-3 leftAnimation" style="max-width: 145px;">
+            <img src="/static/arrow.png" alt="...">            
+          </div>
+          <!--4th image-->
+           <div style="max-width: 145px;">
+            <img src="/static/qualitycheck.png" alt="...">  
+            <p class="text-center mx-2 h6" style="color: #15544a;">Quality Check</p>                      
+          </div>
+          <!--5th image-->
+           <div class="my-3 leftAnimation" style="max-width: 145px;">
+            <img src="/static/arrow.png" alt="...">            
+          </div>
+          <!--7th image-->
+           <div style="max-width: 145px;">
+            <img src="/static/packaging.png" alt="...">  
+            <p class="text-center mx-2 h6" style="color: #15544a;">Packaging</p>                      
+          </div>
+          <!--8th image-->
+           <div class="my-3 leftAnimation" style="max-width: 145px;">
+            <img src="/static/arrow.png" alt="...">            
+          </div>
+          <!--9th image-->
+           <div style="max-width: 145px;">
+            <img src="/static/delivery.png" alt="...">    
+            <p class="text-center mx-2 h6" style="color: #15544a;">Shipping</p>                    
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+  
+    <!--manufaturing process section end-->
+
+    <!--CEO mission quote start-->
+    
+    <section class="container pt-3 pt-sm-4 pt-lg-5 mt-lg-2 mt-xl-4 mt-xxl-5" id="mission" style="scroll-margin-top: 60px">
+      <div class="text-center mx-auto" style="max-width: 690px;">
+        <h2 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #ee3435;">Mission</h2>
+        <h3 class="h1 pb-6 pb-md-3 mx-auto" style="color: #15544a">The best products at fair prices</h3>
+        <p class=" pb-2 pb-md-1 mb-3" style="color: #15544a">"We believe our products are crafted to make life simpler and more enjoyable. That's why finding the right brass products with us is quick and convenient. At Swastik Metal, we provide tailored solutions, ensuring quality and customer satisfaction."</p>
+        <hr class="mt-0 mb-3">
+        <h6 class="mb-3" style="color: #15544a">Shailesh Taraviya, Swastik Metal CEO</h6>
+      </div>
+    </section>
+    
+    <!--CEO mission quote end-->
+
+  </nav>    
+
+
+  <!--body section end-->
+
+{% endblock body %}
